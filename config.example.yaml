@@ -1,0 +1,43 @@
+# Share package default: use the small sample data committed under sample_data/.
+data_root: './sample_data'
+cache_db: './cache/market.duckdb'
+output_dir: './outputs'
+
+# Strategy
+signal_start_date: '2012-01-04'
+end_date: null
+momentum_days: 10
+top_n_sectors: 3
+hold_days: 2
+staggered_portfolios: 2
+
+# Historical stock pool / tradability
+exclude_st: false
+st_detection: 'flag_or_name'   # flag | name | flag_or_name
+require_positive_volume: true
+min_sector_constituents: 1
+
+# Sector reconstruction and constituent allocation
+sector_return_weighting: 'free_float_mcap'
+constituent_weighting: 'free_float_mcap'
+
+# Capital and transaction costs
+initial_capital: 1000000.0
+# Current cost stress-test assumptions:
+buy_fee_rate: 0.0003
+sell_fee_rate: 0.0003
+sell_tax_rate: 0.001
+# Low-cost video-style baseline was:
+# buy_fee_rate: 0.000086
+# sell_fee_rate: 0.000086
+# sell_tax_rate: 0.0
+
+# Fractional shares are allowed for index-like weight replication.
+allow_fractional_shares: true
+lot_size: 100
+
+# If an intended exit cannot trade, sell at the first later tradable open.
+suspension_exit_policy: 'first_tradable_open'
+
+save_trade_log: true
+industry_aliases: {}
