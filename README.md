@@ -49,7 +49,7 @@
 - `config.example.yaml`：配置模板；
 - `requirements.txt`：Python 依赖；
 - `RESULTS.md`：当前实验结果；
-- `sample_data/`：后续上传约 2–3 个月的小样本数据，便于直接测试代码。
+- `sample_data/`：已提交约 3 个月的全股票横截面样本，便于直接测试代码；具体统计见 `sample_data/README.md`。
 
 ## 运行
 
